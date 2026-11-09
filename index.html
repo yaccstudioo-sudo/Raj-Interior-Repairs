@@ -97,7 +97,7 @@
         }
 
         .btn-call-accent {
-            background-color: #25d366; /* WhatsApp Green / Action Green */
+            background-color: #25d366;
             color: var(--white);
             font-weight: 700;
         }
@@ -255,7 +255,7 @@
             flex-wrap: wrap;
         }
 
-        /* --- CALL BANNER (MIDDLE) --- */
+        /* --- CALL BANNER --- */
         .call-banner {
             background-color: var(--primary-color);
             color: var(--white);
@@ -361,6 +361,104 @@
             font-size: 0.85rem;
         }
 
+        /* --- STOREFRONT / GBP SHOWCASE CARD --- */
+        .gbp-showcase {
+            background-color: var(--light-bg);
+            padding: 40px 0;
+        }
+
+        .gbp-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            transition: var(--transition);
+        }
+
+        .gbp-card:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .gbp-image-container {
+            position: relative;
+            min-height: 280px;
+            background: #cbd5e1;
+        }
+
+        .gbp-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gbp-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .gbp-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .gbp-content h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+        }
+
+        .gbp-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .gbp-content p i {
+            color: var(--primary-color);
+            margin-top: 4px;
+            font-size: 1.1rem;
+        }
+
+        .gbp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .gbp-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
         /* --- WHY CHOOSE US --- */
         .why-us {
             background-color: var(--white);
@@ -446,16 +544,45 @@
         .map-container {
             width: 100%;
             height: 100%;
-            min-height: 350px;
+            min-height: 420px;
+            background-color: var(--card-bg);
+            padding: 20px;
             border-radius: 8px;
-            overflow: hidden;
             box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .map-container iframe {
+        .map-frame-wrapper {
+            width: 100%;
+            height: 350px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .map-frame-wrapper iframe {
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        .map-footer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .map-footer-info a {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .map-footer-info a:hover {
+            text-decoration: underline;
         }
 
         /* --- FOOTER --- */
@@ -570,11 +697,15 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .gbp-card {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
             .top-bar {
-                display: none; /* Hide topbar on mobile to save space */
+                display: none;
             }
 
             .hamburger {
@@ -623,7 +754,7 @@
             }
 
             body {
-                padding-bottom: 50px; /* Space for mobile sticky button */
+                padding-bottom: 50px;
             }
         }
     </style>
@@ -634,7 +765,6 @@
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="top-bar-info">
-              
                 <span><i class="fa-solid fa-clock"></i> Mon - Sun: 8:00 AM - 10:00 PM</span>
             </div>
             <div class="top-bar-info">
@@ -761,12 +891,12 @@
         </div>
     </section>
     
-<section class="gbp-showcase">
+    <!-- STOREFRONT / GBP SHOWCASE SECTION -->
+    <section class="gbp-showcase">
         <div class="container">
             <div class="gbp-card">
-
-                <div class="gbp-image-container" style="padding: 24px; box-sizing: border-box;">
-                   
+                <div class="gbp-image-container">
+                    <span class="gbp-badge">Google Business Profile</span>
                     <img src="https://pub-87791c561f3e4177ada84f95c06e60e1.r2.dev/shopfront1.webp" alt="Raj Interior and Repairs Storefront">
                 </div>
                 <div class="gbp-content">
@@ -778,7 +908,6 @@
                     <a href="https://maps.app.goo.gl/wchKZfskjw9vYEVU8" target="_blank" rel="noopener noreferrer" class="gbp-btn">
                         <i class="fa-solid fa-diamond-turn-right"></i> Get Directions on Google Maps
                     </a>
-                    
                 </div>
             </div>
         </div>
@@ -817,7 +946,7 @@
     </section>
 
     <!-- CONTACT & LOCATION SECTION -->
-    <section id="contact" class="section-padding">
+    <section id="contact" class="section-padding" style="background-color: var(--light-bg);">
         <div class="container">
             <div class="section-header">
                 <h2>Contact & Location</h2>
@@ -851,13 +980,15 @@
                             <p><a href="tel:+919718338592" style="font-weight: 700; color: var(--primary-color);">+91 97183 38592</a></p>
                         </div>
                     </div>
+
                     <div class="info-item">
-                        <i class="fa-solid fa-store"></i>
+                        <i class="fa-solid fa-globe"></i>
                         <div>
                             <h4>Google Business Profile</h4>
                             <p><a href="https://g.page/r/CRhVtvVCrcjRECE/" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--primary-color);">View Our Google Profile</a></p>
                         </div>
                     </div>
+
                     <div class="info-item">
                         <i class="fa-solid fa-clock"></i>
                         <div>
@@ -871,49 +1002,32 @@
                     </div>
                 </div>
                 
-           
+                <!-- Google Maps Container -->
+                <div class="map-container">
+                    <div class="map-frame-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps?q=28.6032708,77.0672239&z=17&output=embed"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Raj Interior and Repairs - Exact Location">
+                        </iframe>
+                    </div>
 
-
-<!-- Google Maps / Exact Business Location -->
-<div class="lg:col-span-7 bg-white p-4 rounded-3xl shadow-xl border border-slate-200 flex flex-col">
-    <div class="relative w-full rounded-2xl overflow-hidden bg-slate-200">
-        <iframe
-            src="https://www.google.com/maps?q=28.6032708,77.0672239&z=17&output=embed"
-            class="w-full border-0 rounded-2xl"
-            style="height: 350px;"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Raj Interior and Repairs - Exact Location">
-        </iframe>
-    </div>
-
-    <div class="p-4 flex items-center justify-between gap-3 text-xs text-slate-500">
-        <span>
-            <i class="fa-solid fa-map-pin text-brand-600 mr-1"></i>
-            Raj Interior and Repairs
-        </span>
-
-        <a
-            href="https://www.google.com/maps/dir/?api=1&destination=Raj+Interior+and+Repairs%2C+28.6032708%2C+77.0672239"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-brand-600 font-bold hover:underline whitespace-nowrap">
-            Get Directions
-        </a>
-    </div>
-</div>
-
-
-
-
-
-          
+                    <div class="map-footer-info">
+                        <span>
+                            <i class="fa-solid fa-map-pin" style="color: var(--primary-color);"></i>
+                            Raj Interior and Repairs
+                        </span>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Raj+Interior+and+Repairs%2C+28.6032708%2C+77.0672239" target="_blank" rel="noopener noreferrer">
+                            Get Directions <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
 
             </div>
         </div>
     </section>
-    
 
     <!-- FOOTER -->
     <footer>
